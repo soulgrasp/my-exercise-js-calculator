@@ -12,6 +12,7 @@ Nan = nummeroperationer på ej godkänd typ
 
 Variables
 */
+/*
 let firstName = "Niklas";
 
 firstName = "Dimitris";
@@ -19,7 +20,7 @@ firstName = "Dimitris";
 console.log(firstName);
 
 const birthYear = 1990;
-
+*/
 /*
 birthYear = 2000; error not 
 */
@@ -78,6 +79,11 @@ for (const key in person) {
 */
 // Arrays a special type of object, arrays you use index instead of keys
 // in JS arrays are dynamic
+
+// ###### End section  ########
+
+/*
+
 const sports = ["football", "handball", "basketball", "tennis"];
 // accepts types dynamically
 console.log(sports);
@@ -156,8 +162,63 @@ const filteredNumbers2 = numbers3.map(function(number){
 })
 console.log(filteredNumbers2);
 
-// Functions
+*/
+// ###### End section  #######
+
+// ###########   Functions  ########
+//  can have free functions not connected to a class fundamental difference with c#. Reusability 
+
+const sum = add(5, 7);
+console.log(sum);
+
+// const sum2 = multiply(5,5); Example this crashes hence comment line
+
+// free functions gets hoisted to the top  **  important  **
+function greet(name) {
+    console.log(`Hello ${name}`);
+}
 
 
+function add(a, b) {
+    return a + b;
+}
+
+// nameing function  functions with a variable
+// Store functions in variables, function expression  function is defined in a variable
+const multiply = function(a,b) {
+    return a * b;
+}
+// Does not get hoisted to the top, hence sequence dependent in code
+// put pure functions on the top for structure and clear code
+
+// ## Arrow functions ##  
+//  Provides a shorter syntax for writing functions in JS. They are partic useful for wring concise one-liner functions
+// and callback functions
+
+// normal way
+const divide1 = function(a,b) {return a/b;}
+// arrow way
+const divide2 = (a,b) => {
+    return a / b;
+};
+const divide3 = (a,b) => a / b;  // the one line way
+
+// =>  eliminates the function keyword
+// if the return value is simple use it
+
+// Most common Use cases for arrow functions  Callback
+const numbers = [1, 4,6,234];
+
+const doubleNumbers = numbers.map((number) => number * 2);
+
+const filteredNumbers = numbers.filter((number) => number < 50);
+
+
+
+
+// consolen är en JS tolk interpreter
+// functions without return = undefined
+
+// comparisons   "==" vs "==="
 
 
