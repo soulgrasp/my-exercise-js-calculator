@@ -25,10 +25,13 @@ const inNumber2 = window.parseInt(prompt("Type one more"));
 
 const operationType = window.parseInt(prompt("Choose type of operation \n 1(addition) \n 2(subtraction) \n 3(multiply) \n 4(divide)")); 
 
-const result = doOperation(inNumber1, inNumber2, operationType);
 
-alert(`The result is: ${result}`);
+const result = window.parseInt(doOperation(inNumber1, inNumber2, operationType));
+
+if (result >= 0)
+    alert(`The result is: ${result}`);
+else
+    alert("Only numbers are allowed");
     
-//console.log(inNumber);
 
 alert("hasta la vista");
