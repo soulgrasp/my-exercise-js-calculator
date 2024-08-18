@@ -47,8 +47,116 @@ const person = {
     },
 };
 
+/*
 console.log(person);
+console.log(person.name);  // dot notation
 // all is possible to put inside an object
+
+console.log(person["prof"]); // square bracket notation alternative way to access
+
+person.name = "Henrik"; // modify existing property
+
+console.log(person.name);
+
+person.children = 3; // out of the blue just add a new property
+console.log(person.children);
+
+person.sayHeil(); // invoke function
+//delete person.prof; // remove property
+
+
+
+
+// loop through an object in js
+// for in för object 
+// for of för arrays
+for (const key in person) {
+    console.log(person[key]);
+    // need to use bracket notation to access dynamic variables
+}
+// semicolon is optional in JS
+*/
+// Arrays a special type of object, arrays you use index instead of keys
+// in JS arrays are dynamic
+const sports = ["football", "handball", "basketball", "tennis"];
+// accepts types dynamically
+console.log(sports);
+// access and manipulation via index
+console.log(sports[1]);
+sports[1] = "golf";
+
+console.log(sports[1]);
+sports.push("Hockey"); // add new element to the end of the array
+console.log(sports);
+// remove
+sports.pop(); // removes last element of array
+console.log(sports);
+console.log(sports.length); // get number of elements in the array
+const removedElement = sports.pop();  // save removed object/element
+console.log(removedElement);
+sports2 = ["football", "handball", "basketball", "tennis"];
+// unshift() // add new element to beginning of array
+// shift() remove the first elment of array
+
+// foreach ( callback(element, index?))
+// callback function that is used as a paramenter/argument
+sports2.forEach(function(element){
+    console.log(element); // loop ove sports and print every object to console, written  a mini function in the calling argument
+});
+
+// includes (searchElement) if element exists or not in array
+const doesSoccerExists = sports2.includes("football");
+console.log(doesSoccerExists);
+
+// indexOf ( searchElement) // returns index
+const indexOfTennis = sports2.includes("basketball");
+console.log(indexOfTennis);
+
+// slice ( start, end) gets intersection from an array (sub arrays) includes start index but excludes the end index object
+const aSlice = sports2.slice(1,3);  // gets second and third elements
+console.log(aSlice);
+
+// splice(start, deleteCount?, item1?, itemN) used to insert and delete element in the middle of an array
+console.log(sports);
+const deletedElement = sports.splice(2, 1,"Curling", "Badminton") // deletecount 1, use 0 for not delete any element
+console.log(sports);
+
+// map( callback(elemenent, index?) )  // returns a new array with the modified content
+const numbers = [1, 2, 3, 4];
+const numbersDoubled = numbers.map(function(number){ // new values ends up in the new array is used to modify each element in an array and return result
+    if (number === 3){
+        return number * 3;
+    }
+    return number * 2;
+})
+
+console.log(numbers);
+console.log(numbersDoubled);
+
+// filter( callback(element, index?)) // returns elements that pass the filter condition
+const numbers2 = [1, 23, 32, 44, 55, 60];
+const numbers3 = numbers2;
+console.log(numbers2)
+const filteredNumbers = numbers2.filter(function(element){
+    if (element > 50) // must return true or false
+        return false; // filtered away
+
+    return true; // passed and returned
+});
+
+console.log(filteredNumbers);  // print elements that passed the condition
+
+console.log(numbers3);
+const filteredNumbers2 = numbers3.map(function(number){
+    if (number === 32){
+        return number;
+    }
+
+    return number * 2;
+})
+console.log(filteredNumbers2);
+
+// Functions
 
 
 
